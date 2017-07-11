@@ -61,20 +61,20 @@ public class Adapter extends BaseAdapter {
             holder.serialContent = (TextView) convertView.findViewById(R.id.serialContent);
 
             holder.modelN_content = (TextView) convertView.findViewById(R.id.modelN_content);
-            holder.Date_Content = (TextView) convertView.findViewById(R.id.Date_Content);
-            holder.Expires = (TextView) convertView.findViewById(R.id.Expires);
+//            holder.Date_Content = (TextView) convertView.findViewById(R.id.Date_Content);
+//            holder.Expires = (TextView) convertView.findViewById(R.id.Expires);
 
             holder.nameLoc = (TextView) convertView.findViewById(R.id.nameLoc);
             holder.cityLoc = (TextView) convertView.findViewById(R.id.cityLoc);
-            holder.countryLoc = (TextView) convertView.findViewById(R.id.countryLoc);
+//            holder.countryLoc = (TextView) convertView.findViewById(R.id.countryLoc);
             holder.latitude = (TextView) convertView.findViewById(R.id.latitude);
-            holder.longitude = (TextView) convertView.findViewById(R.id.longitude);
+//            holder.longitude = (TextView) convertView.findViewById(R.id.longitude);
 
             holder.valueStatus = (TextView) convertView.findViewById(R.id.valueStatus);
-            holder.nameDanger = (TextView) convertView.findViewById(R.id.nameDanger);
-            holder.valueContent = (TextView) convertView.findViewById(R.id.valueContent);
-            holder.actionContet = (TextView) convertView.findViewById(R.id.actionContet);
-            convertView.setTag(holder);
+//            holder.nameDanger = (TextView) convertView.findViewById(R.id.nameDanger);
+//            holder.valueContent = (TextView) convertView.findViewById(R.id.valueContent);
+//            holder.actionContet = (TextView) convertView.findViewById(R.id.actionContet);
+//            convertView.setTag(holder);
 
         } else {
             holder = (ViewHolder) convertView.getTag();
