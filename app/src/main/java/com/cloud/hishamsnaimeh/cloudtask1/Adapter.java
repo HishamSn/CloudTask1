@@ -42,7 +42,7 @@ public class Adapter extends BaseAdapter {
 
     private class ViewHolder {
         TextView nameServer, ip_Content, maskContent, mTypeContent, serialContent;
-        TextView modelN_content, Date_Content, Expires;
+        TextView modelN_content, cDate, Expires;
         TextView nameLoc, cityLoc, countryLoc, latitude, longitude;
         TextView valueStatus, nameDanger, valueContent, actionContet;
     }
@@ -61,20 +61,20 @@ public class Adapter extends BaseAdapter {
             holder.serialContent = (TextView) convertView.findViewById(R.id.serialContent);
 
             holder.modelN_content = (TextView) convertView.findViewById(R.id.modelN_content);
-//            holder.Date_Content = (TextView) convertView.findViewById(R.id.Date_Content);
-//            holder.Expires = (TextView) convertView.findViewById(R.id.Expires);
-
+            holder.cDate = (TextView) convertView.findViewById(R.id.cDate);
+            holder.Expires = (TextView) convertView.findViewById(R.id.Expires);
+//
             holder.nameLoc = (TextView) convertView.findViewById(R.id.nameLoc);
             holder.cityLoc = (TextView) convertView.findViewById(R.id.cityLoc);
-//            holder.countryLoc = (TextView) convertView.findViewById(R.id.countryLoc);
+            //    holder.countryLoc = (TextView) convertView.findViewById(R.id.countryLoc);
             holder.latitude = (TextView) convertView.findViewById(R.id.latitude);
-//            holder.longitude = (TextView) convertView.findViewById(R.id.longitude);
-
+            //    holder.longitude = (TextView) convertView.findViewById(R.id.longitude);
+//
             holder.valueStatus = (TextView) convertView.findViewById(R.id.valueStatus);
 //            holder.nameDanger = (TextView) convertView.findViewById(R.id.nameDanger);
 //            holder.valueContent = (TextView) convertView.findViewById(R.id.valueContent);
 //            holder.actionContet = (TextView) convertView.findViewById(R.id.actionContet);
-//            convertView.setTag(holder);
+            convertView.setTag(holder);
 
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -91,24 +91,24 @@ public class Adapter extends BaseAdapter {
         holder.serialContent.setText(list.get(position).getSerialNum());
 
         holder.modelN_content.setText(list.get(position).getModel().getName());
-        holder.Date_Content.setText(list.get(position).getModel().getCreationDate());
+        holder.cDate.setText(list.get(position).getModel().getCreationDate());
         holder.Expires.setText(list.get(position).getModel().getExpiryDate());
-
+//
         holder.nameLoc.setText(list.get(position).getLocation().getName());
-        holder.cityLoc.setText(list.get(position).getLocation().getCity().getName());
-        holder.countryLoc.setText(list.get(position).getLocation().getCity().getCountry().getName());
-        holder.latitude.setText(Double.toString(list.get(position).getLocation().getLatitude()));
-        holder.longitude.setText(Double.toString(list.get(position).getLocation().getLongitude()));
+        holder.cityLoc.setText(list.get(position).getLocation().getCity().getName()+" , "+list.get(position).getLocation().getCity().getCountry().getName());
+        //   holder.countryLoc.setText(list.get(position).getLocation().getCity().getCountry().getName());
+        holder.latitude.setText(Double.toString(list.get(position).getLocation().getLatitude())+" , "+Double.toString(list.get(position).getLocation().getLongitude()));
+        //  holder.longitude.setText(Double.toString(list.get(position).getLocation().getLongitude()));
 
         holder.valueStatus.setText(list.get(position).getStatus().getStatusValue());
-        holder.nameDanger.setText(list.get(position).getStatus().getDangerLevel().getDangerLevelName());
-        holder.valueContent.setText(Integer.toString(list.get(position).getStatus().getDangerLevel().getDangerLevelIntValue()));
-        if (list.get(position).getStatus().getDangerLevel().isActionRequired()) {
-            holder.actionContet.setText("true");
-        } else {
-            holder.actionContet.setText("false");
-
-        }
+//        holder.nameDanger.setText(list.get(position).getStatus().getDangerLevel().getDangerLevelName());
+//        holder.valueContent.setText(Integer.toString(list.get(position).getStatus().getDangerLevel().getDangerLevelIntValue()));
+//        if (list.get(position).getStatus().getDangerLevel().isActionRequired()) {
+//            holder.actionContet.setText("1");
+//        } else {
+//            holder.actionContet.setText("0");
+//
+//        }
 
 
         return convertView;
